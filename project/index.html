@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="./css/fish1.css" />
+
+  <title>抓魚</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <style>
+    body{
+      cursor:url("http://hk.geocities.com/qq230512/3.ani");
+    }
+  </style>
+  
+
+
+</head>
+
+<body id="page-top">
+  <!-- Header -->
+  <div class="masthead d-flex" id="sea1" style="background-image:url('./img/sea1.jpg');">
+  
+    <script>
+	  var inputText = prompt("請輸入你的ID ", " ");
+	  var scoreText = prompt("請輸入難度 1=簡單 2=普通 3=困難 ", " ");
+	  window.alert('遊戲規則:\n 抓到鯊魚+300分\n 抓到垃圾-100\n 抓到海龜-200\n 其餘抓到皆+200\n');
+	  var goal=0;
+	  if(scoreText == 1){
+	    goal=1000;
+	  }
+	  if(scoreText == 2){
+	    goal=2000;
+	  }
+	  if(scoreText == 3){
+	    goal=3000;
+	  }
+	  window.alert('請達到'+goal+'分');
+	  var initpos = ['0','150','300','450','600'];<!-- 魚初始位置 -->
+	  var fishpic = ['./IMG/trash.png','./IMG/fish1.png','./IMG/fish2.png','./IMG/fish3.png','./IMG/turtle.png','./IMG/fish4.png','./IMG/fish5.png','./IMG/fish6.png','./IMG/fish7.png','./IMG/shark.png'];<!-- 魚圖片 -->
+	  var fishcssid = ['fish1','fish2','fish3','fish4','fish5'];<!-- 魚動的方式 -->
+	  for(var k=0;k<5;k++)
+	  {
+	    document.write('<img onclick="fish('+k+')" id="'+fishcssid[k]+'" src="'+fishpic[k]+'" style="position: absolute; top:'+initpos[k]+'px;">');<!-- 魚初始的畫面 -->
+	  }
+	  var score = 0;
+	  document.write('<h2>分數:'+score+'</h2>');
+	  function fish(num){ 
+		var selectposcss = [5];
+		for(var j=0;j<5;j++){
+		  selectposcss[j]=Math.floor(Math.random()*5+1);
+		}
+		var selectpossea = [5];
+		for(var i=0;i<5;i++){
+		  selectpossea[i] = Math.floor(Math.random()*601);
+		}
+		<!-- 判斷點的的魚有幾分 -->
+		switch(num){
+		  case 0:
+		    score = score - 100;
+			break;
+		  case 1:
+		    score = score + 200;
+			break;
+		  case 2:
+		    score = score + 200;
+			break;
+		  case 3:
+		    score = score + 200;
+			break;
+		  case 4:
+		    score = score - 200 ;
+			break;
+		}
+	    if(score>=goal)<!-- 判斷分數到了沒 -->
+		{
+		  window.alert('遊戲結束');
+		  var r = confirm("是否重新開始遊戲");
+          if (r == true) {
+		    window.alert('恭喜'+inputText+'的分數為'+score+'  挑戰成功!!');
+            score = 0;
+          } else {
+            window.alert('恭喜'+inputText+'的分數為'+score+'  挑戰成功!!');
+			inputText=prompt("請輸入你的ID ", " ");
+			var scoreText = prompt("請輸入難度 1=簡單 2=普通 3=困難 ", " ");
+			window.alert('遊戲規則:\n 抓到鯊魚+300分\n 抓到垃圾-100\n 抓到海龜-200\n 其餘抓到皆+200\n');
+			window.alert('請達到'+goal+'分');
+	        score = 0;
+          }
+		}
+		<!-- 當魚被點到時重新跑一次sea1 and sea2 -->
+        document.getElementById('sea1').innerHTML='<img id="fish'+selectposcss[0]+'" onclick="fish(0)" src="'+fishpic[0]+'" style="position: absolute; top:'+selectpossea[0]+'px;"><img id="fish'+selectposcss[1]+'" onclick="fish(1)" src="'+fishpic[1]+'" style="position: absolute; top:'+selectpossea[1]+'px;"><img id="fish'+selectposcss[2]+'" onclick="fish(2)" src="'+fishpic[2]+'" style="position: absolute; top:'+selectpossea[2]+'px;"><img id="fish'+selectposcss[3]+'" onclick="fish(3)" src="'+fishpic[3]+'" style="position: absolute; top:'+selectpossea[3]+'px;"><img id="fish'+selectposcss[4]+'" onclick="fish(4)" src="'+fishpic[4]+'" style="position: absolute; top:'+selectpossea[4]+'px;"> <a class="btn btn-primary btn-xl js-scroll-trigger" href="#sea2" style="position:absolute;bottom:10px;">前往深海</a> <h2>分數:'+score+'</h2>';
+		document.getElementById('sea2').innerHTML='<img id="fish'+selectposcss[0]+'" onclick="fish2(0)" src="'+fishpic[5]+'" style="position: absolute; top:'+selectpossea[0]+'px;"><img id="fish'+selectposcss[1]+'" onclick="fish2(1)" src="'+fishpic[6]+'" style="position: absolute; top:'+selectpossea[1]+'px;"><img id="fish'+selectposcss[2]+'" onclick="fish2(2)" src="'+fishpic[7]+'" style="position: absolute; top:'+selectpossea[2]+'px;"><img id="fish'+selectposcss[3]+'" onclick="fish2(3)" src="'+fishpic[8]+'" style="position: absolute; top:'+selectpossea[3]+'px;"><img id="fish'+selectposcss[4]+'" onclick="fish2(4)" src="'+fishpic[9]+'" style="position: absolute; top:'+selectpossea[4]+'px;"> <a class="btn btn-primary btn-xl js-scroll-trigger" href="#sea1" style="position:absolute;bottom:10px;">返回淺海</a> <h2>分數:'+score+'</h2>';
+      } 
+	  
+      //重複執行方法 
+      var t1 = window.setInterval(fish,1000); 
+      var t2 = window.setInterval("fish()",10000); 
+      //去掉定時器的方法 
+      window.clearInterval(t1);
+	  
+	</script>
+	<a class="btn btn-primary btn-xl js-scroll-trigger" href="#sea2" style="position:absolute;bottom:10px">前往深海</a>
+  </div>
+
+  <!-- About -->
+  <div class="masthead d-flex" id="sea2" style="background-image:url('./img/sea2.jpg');">
+    <script>
+	  var goal=0;
+	  if(scoreText == 1){
+	    goal=1000;
+	  }
+	  if(scoreText == 2){
+	    goal=2000;
+	  }
+	  if(scoreText == 3){
+	    goal=3000;
+	  }
+	  var initpos = ['0','150','300','450','600'];
+	  var fishpic = ['./IMG/trash.png','./IMG/fish1.png','./IMG/fish2.png','./IMG/fish3.png','./IMG/turtle.png','./IMG/fish4.png','./IMG/fish5.png','./IMG/fish6.png','./IMG/fish7.png','./IMG/shark.png'];
+	  var fishcssid = ['fish1','fish2','fish3','fish4','fish5'];
+	  for(var k=0;k<5;k++)
+	  {
+	    document.write('<img onclick="fish('+k+')" id="'+fishcssid[k]+'" src="'+fishpic[k+5]+'" style="position: absolute; top:'+initpos[k]+'px;">');
+	  }
+	  var score = 0;
+	  document.write('<h2>分數:'+score+'</h2>');
+	  function fish2(num){ 
+		var selectposcss = [5];
+		for(var j=0;j<5;j++){
+		  selectposcss[j]=Math.floor(Math.random()*5+1);
+		}
+		var selectpossea = [5];
+		for(var i=0;i<5;i++){
+		  selectpossea[i] = Math.floor(Math.random()*601);
+		}
+		switch(num){
+		  case 0:
+		    score = score + 200;
+			break;
+		  case 1:
+		    score = score + 200;
+			break;
+		  case 2:
+		    score = score + 200;
+			break;
+		  case 3:
+		    score = score + 200;
+			break;
+		  case 4:
+		    score = score + 300;
+			break;
+		}
+		var txt;
+	    if(score>=goal)<!-- 判斷分數到了沒 -->
+		{
+		  window.alert('遊戲結束');
+		  var r = confirm("是否重新開始遊戲");
+          if (r == true) {
+		    window.alert('恭喜'+inputText+'的分數為'+score+'  挑戰成功!!');
+            score = 0;
+          } else {
+            window.alert('恭喜'+inputText+'的分數為'+score+'  挑戰成功!!');
+			inputText=prompt("請輸入你的ID ", " ");
+			var scoreText = prompt("請輸入難度 1=簡單 2=普通 3=困難 ", " ");
+			window.alert('遊戲規則:\n 抓到鯊魚+300分\n 抓到垃圾-100\n 抓到海龜-200\n 其餘抓到皆+200\n');
+			window.alert('請達到'+goal+'分');
+	        score = 0;
+          }
+		}
+        document.getElementById('sea1').innerHTML='<img id="fish'+selectposcss[0]+'" onclick="fish(0)" src="'+fishpic[0]+'" style="position: absolute; top:'+selectpossea[0]+'px;"><img id="fish'+selectposcss[1]+'" onclick="fish(1)" src="'+fishpic[1]+'" style="position: absolute; top:'+selectpossea[1]+'px;"><img id="fish'+selectposcss[2]+'" onclick="fish(2)" src="'+fishpic[2]+'" style="position: absolute; top:'+selectpossea[2]+'px;"><img id="fish'+selectposcss[3]+'" onclick="fish(3)" src="'+fishpic[3]+'" style="position: absolute; top:'+selectpossea[3]+'px;"><img id="fish'+selectposcss[4]+'" onclick="fish(4)" src="'+fishpic[4]+'" style="position: absolute; top:'+selectpossea[4]+'px;"> <a class="btn btn-primary btn-xl js-scroll-trigger" href="#sea2" style="position:absolute;bottom:10px;">前往深海</a> <h2>分數:'+score+'</h2>';
+		document.getElementById('sea2').innerHTML='<img id="fish'+selectposcss[0]+'" onclick="fish2(0)" src="'+fishpic[5]+'" style="position: absolute; top:'+selectpossea[0]+'px;"><img id="fish'+selectposcss[1]+'" onclick="fish2(1)" src="'+fishpic[6]+'" style="position: absolute; top:'+selectpossea[1]+'px;"><img id="fish'+selectposcss[2]+'" onclick="fish2(2)" src="'+fishpic[7]+'" style="position: absolute; top:'+selectpossea[2]+'px;"><img id="fish'+selectposcss[3]+'" onclick="fish2(3)" src="'+fishpic[8]+'" style="position: absolute; top:'+selectpossea[3]+'px;"><img id="fish'+selectposcss[4]+'" onclick="fish2(4)" src="'+fishpic[9]+'" style="position: absolute; top:'+selectpossea[4]+'px;"> <a class="btn btn-primary btn-xl js-scroll-trigger" href="#sea1" style="position:absolute;bottom:10px;">返回淺海</a> <h2>分數:'+score+'</h2>';
+      } 
+	  
+      //重複執行某個方法 
+      var t1 = window.setInterval(fish2,1000); 
+      var t2 = window.setInterval("fish2()",10000); 
+      //去掉定時器的方法 
+      window.clearInterval(t1);
+	  
+	</script>
+    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#sea1" style="position:absolute;bottom:10px;">返回淺海</a>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>

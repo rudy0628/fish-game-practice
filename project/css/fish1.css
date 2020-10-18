@@ -1,0 +1,111 @@
+#sea1{
+  overflow: hidden;
+}
+#sea2{
+  overflow: hidden;
+}
+#fish1
+	{ width: 200px;
+	  height: 100px;
+	  position:relative;
+      animation:fish1 5s infinite; /*IE*/
+      -moz-animation:fish1 5s infinite; /*FireFox*/
+      -webkit-animation:fish1 5s infinite; /*Chrome, Safari*/
+	}
+	@keyframes fish1
+	{  
+	  from {right:0%;}
+      to {right:100%;}
+	}
+	@-moz-keyframes fish1{
+      from {right:0%;}
+      to {right:100%;}
+    }
+    @-webkit-keyframes fish1{
+      from {right:0%;}
+      to {right:100%;}
+    }
+#fish2
+	{ width: 200px;
+	  height: 100px;
+	  position:relative;
+      animation:fish2 10s infinite; /*IE*/
+      -moz-animation:fish2 10s infinite; /*FireFox*/
+      -webkit-animation:fish2 10s infinite; /*Chrome, Safari*/
+	}
+	@keyframes fish2
+	{  
+	  from {left:0%;}
+      to {left:100%;}
+	}
+	@-moz-keyframes fish2{
+      from {left:0%;}
+      to {left:100%;}
+    }
+    @-webkit-keyframes fish2{
+      from {left:0%;}
+      to {left:100%;}
+    }
+#fish3
+	{ width: 200px;
+	  height: 100px;
+	  position:relative;
+      animation:fish3 8s infinite; /*IE*/
+      -moz-animation:fish3 8s infinite; /*FireFox*/
+      -webkit-animation:fish3 8s infinite; /*Chrome, Safari*/
+	}
+	@keyframes fish3
+	{  
+	  from {left:-75%;}
+      to {left:115%;}
+	}
+	@-moz-keyframes fish3{
+      from {left:-75%;}
+      to {left:115%;}
+    }
+    @-webkit-keyframes fish3{
+      from {left:-75%;}
+      to {left:115%;}
+    }
+#fish4
+	{ width: 200px;
+	  height: 100px;
+	  position:relative;
+      animation:fish4 12s infinite; /*IE*/
+      -moz-animation:fish4 12s infinite; /*FireFox*/
+      -webkit-animation:fish4 12s infinite; /*Chrome, Safari*/
+	}
+	@keyframes fish4
+	{  
+	  from {top:0%;}
+      to {top:100%;}
+	}
+	@-moz-keyframes fish4{
+      from {top:0%;}
+      to {top:100%;}
+    }
+    @-webkit-keyframes fish4{
+      from {top:0%;}
+      to {top:100%;}
+    }
+#fish5
+	{ width: 200px;
+	  height: 100px;
+	  position:relative;
+      animation:fish5 6s infinite; /*IE*/
+      -moz-animation:fish5 6s infinite; /*FireFox*/
+      -webkit-animation:fish5 6s infinite; /*Chrome, Safari*/
+	}
+	@keyframes fish5
+	{  
+	  from {left:-75%;}
+      to {left:115%;}
+	}
+	@-moz-keyframes fish5{
+      from {left:-75%;}
+      to {left:115%;}
+    }
+    @-webkit-keyframes fish5{
+      from {left:-75%;}
+      to {left:115%;}
+    }

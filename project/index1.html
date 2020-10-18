@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>抓魚</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+  <style>
+    .buttonStart {
+	  background-color: #e7e7e7; 
+	  color: black;
+	  position:absolute;
+	  top:350px;
+	  right:970px;
+	}
+	.buttonVideo{
+	  background-color: #e7e7e7; 
+	  color: black;
+	  position:absolute;
+	  top:350px;
+	  right:570px;
+	}
+	.button {
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    color:black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	padding: 32px 70px;
+	border-radius: 50%;
+    }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width:70%;
+	height:70%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+	text-align:center;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+     color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+
+  @media screen and (max-width:1500px){
+    .box{
+      width:100%;
+    }
+    .popup{
+      width:100%;
+    }
+  }
+  </style>
+  
+
+
+</head>
+
+<body id="page-top">
+  <!-- Header -->
+  <div class="masthead d-flex" id="sea1" style="background-image:url('./img/oceanStart.jpg');">
+     <h1 style="position:absolute;top:200px;right:780px;color: white;">抓魚</h1>
+	 <a class="button buttonStart" href="http://203.64.169.100/107193126/php/project/index.html">開始遊戲</a>
+	 <a class="button buttonVideo" href="#popup1">遊戲解說</a>
+  </div>
+  <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>解說影片</h2>
+		<a class="close" href="#">&times;</a>
+		<iframe width="100%" height="85%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+	</div>
+</div>
+
+</body>
+
+</html>
